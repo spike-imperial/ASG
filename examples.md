@@ -33,7 +33,7 @@ grammar. This is the standard CFG `a^ib^jc^k` (i.e. any number of `a`'s,
 followed by any number of `b`'s, followed by any number of `c`'s.
 
 This ASG is available
-[here](https://github.com/spike-imperial/FastLAS/tree/master/data/aibjck.asg).
+[here](https://github.com/spike-imperial/ASG/tree/master/data/aibjck.asg).
 We can run the ASG solver on this input file using the command:
 
 ```
@@ -129,7 +129,7 @@ the final lists of `a`'s, `b`'s and `c`'s must all be the same size,
 meaning that the ASG represents the well known CSG `a^nb^nc^n`.
 
 This ASG is available
-[here](https://github.com/spike-imperial/FastLAS/tree/master/data/anbncn.asg).
+[here](https://github.com/spike-imperial/ASG/tree/master/data/anbncn.asg).
 We can run the ASG solver on this input file using the command:
 
 ```
