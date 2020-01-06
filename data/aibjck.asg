@@ -1,0 +1,10 @@
+start -> as bs cs { }
+
+as -> "a" as { }
+as -> { }
+
+bs -> "b" bs { }
+bs -> { }
+
+cs -> "c" cs { }
+cs -> { }
