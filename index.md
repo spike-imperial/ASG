@@ -5,13 +5,13 @@ at AAAI 2019 in the paper "Representing and Learning Grammars in Answer
 Set Programming".
 
 This repository contains instructions for downloading and installing the
-ASG solver and reproducing the results in the paper.
+ASG solver and example ASG input files.
 
 
 ## Table of Contents
 
 1. [Downloading, Installing and Running ASG](installation.md)
-2. [Learning Tasks from the Paper](examples.md)
+2. [Example ASG Input Files](examples.md)
 
 
 Any questions regarding the ASG solver should be sent to
