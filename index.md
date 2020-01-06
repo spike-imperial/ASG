@@ -11,7 +11,7 @@ ASG solver and reproducing the results in the paper.
 ## Table of Contents
 
 1. [Downloading, Installing and Running ASG](installation.md)
-2. [Learning Tasks from the Paper](tasks.md)
+2. [Learning Tasks from the Paper](examples.md)
 
 
 Any questions regarding the ASG solver should be sent to
