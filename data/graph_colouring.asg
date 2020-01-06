@@ -1,0 +1,51 @@
+start -> nodes edges {
+  :- e(N1, N2)@2, col(N1, C)@1, col(N2, C)@1.
+  :- ns(X)@1, not e(X, _)@2, not e(_, X)@2.
+  :- not ns(X)@1, e(X, _)@2.
+  :- not ns(X)@1, e(_, X)@2.
+}
+
+nodes -> {}
+
+nodes -> n nodes {
+  col(X, r) :- n(X)@1.
+  col(X, Y) :- col(X, Y)@2.
+  :- n(X)@1, ns(Y)@2, X <= Y.
+  ns(X) :- n(X)@1.
+  ns(X) :- ns(X)@2.
+}
+
+nodes -> n nodes {
+  col(X, g) :- n(X)@1.
+  col(X, Y) :- col(X, Y)@2.
+  :- n(X)@1, ns(Y)@2, X <= Y.
+  ns(X) :- n(X)@1.
+  ns(X) :- ns(X)@2.
+}
+
+nodes -> n nodes {
+  col(X, b) :- n(X)@1.
+  col(X, Y) :- col(X, Y)@2.
+  :- n(X)@1, ns(Y)@2, X <= Y.
+  ns(X) :- n(X)@1.
+  ns(X) :- ns(X)@2.
+}
+
+
+edges -> {}
+edges -> edge edges {
+  e(X, Y) :- e(X, Y)@1.
+  e(X, Y) :- e(X, Y)@2.
+  :- e(X, Y)@1, e(X2, Y2)@2, X < X2.
+  :- e(X, Y)@1, e(X, Y2)@2, Y <= Y2.
+}
+
+edge -> "(" n "," n ")" {
+  e(X, Y) :- n(X)@2, n(Y)@4.
+}
+
+n -> "0" { n(0). }
+n -> "1" { n(1). }
+n -> "2" { n(2). }
+n -> "3" { n(3). }
+

@@ -1,0 +1,38 @@
+start -> as bs cs { }
+
+as -> "a" as { } | { }
+bs -> "b" bs { } | { }
+cs -> "c" cs { } | { }
+
++ []
++ [ "a", "b", "c" ]
++ [ "a", "a", "b", "b", "c", "c" ]
+- ["a"]
+- ["a", "b"]
+- ["b"]
+- ["b", "c"]
+- ["c"]
+- ["a", "c"]
+- [ "a", "a", "b", "c" ]
+- [ "a", "b", "b", "c" ]
+- [ "a", "b", "c", "c" ]
+
+
+#background {
+num(0).  num(1).  num(2).  num(3).  num(4).
+num(5).  num(6).  num(7).  num(8).  num(9).
+num(10).  num(11).  num(12).  num(13).  num(14).
+num(15).  num(16).  num(17).  num(18).  num(19).
+inc(X, X+1) :- num(X), num(X+1).
+}
+
+#modeh(size(var(num))):[2,3,4,5,6,7].
+#modeh(size(0)):[2,3,4,5,6,7].
+#modeba(size(var(num))).
+#modebb(1, inc(var(num), var(num))):[1,2,3,4,5,6,7].
+
+#bias(":- body(holds_at_node(size(anon(_)), _)).").
+#bias(":- body(inc(anon(_), _)).").
+#bias(":- body(inc(_, anon(_))).").
+#bias(":- body(naf(holds_at_node(size(_), _))), head(holds_at_node(size(_), _)).").
+

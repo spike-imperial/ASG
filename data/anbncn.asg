@@ -1,0 +1,22 @@
+start -> as bs cs {
+  :- size(X)@1, not size(X)@2.
+  :- size(X)@1, not size(X)@3.
+}
+
+as -> "a" as {
+  size(X+1) :- size(X)@2.
+} | {
+  size(0).
+}
+
+bs -> "b" bs {
+  size(X+1) :- size(X)@2.
+} | {
+  size(0).
+}
+
+cs -> "c" cs {
+  size(X+1) :- size(X)@2.
+} | {
+  size(0).
+}
