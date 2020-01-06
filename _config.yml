@@ -1,1 +1,6 @@
 theme: jekyll-theme-slate
+title: ASG
+github:
+  project_tagline: The Answer Set Grammar Solver
+  is_project_page: false
+  is_user_page: false
