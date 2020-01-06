@@ -79,6 +79,73 @@ aabbcc
 Note that the empty line is not a mistake. The empty line is output
 because this grammar accepts the empty string.
 
+### a^nb^nc^n
+
+We can constrain the previous grammar, turning it into a <em>Context
+Sensitive Grammar (CSG)</em> by adding some ASP annotations. These
+annotations mostly use a similar syntax and semantics to standard ASP
+solvers, except that each production rule essentially has a copy of
+each atom in the language of the program (and these can have different
+truth values). The annotations in one production rule can refer to the
+atoms in the child nodes of the production rules by using the notation
+`atom@index`, where `atom` is an atom and `index` is the index of the
+child node (i.e. the position in which it occurs in the body of the
+production rule`. For example, consider the following grammar:
+
+```
+start -> as bs cs {
+  :- size(X)@1, not size(X)@2.
+  :- size(X)@1, not size(X)@3.
+}
+
+as -> "a" as {
+  size(X+1) :- size(X)@2.
+}
+as -> {
+  size(0).
+}
+
+bs -> "b" bs {
+  size(X+1) :- size(X)@2.
+}
+bs -> {
+  size(0).
+}
+
+cs -> "c" cs {
+  size(X+1) :- size(X)@2.
+}
+cs -> {
+  size(0).
+}
+```
+
+The three base cases (production rules 3, 5 and 7) express that the size
+of the current string is 0. The three recursive cases express that the
+size of the current string is one more than the size of the previous
+string (which is accessed by checking the value of size in the second
+child node of the production rule. The first production rule states that
+the final lists of `a`'s, `b`'s and `c`'s must all be the same size,
+meaning that the ASG represents the well known CSG `a^nb^nc^n`.
+
+This ASG is available
+[here](https://github.com/spike-imperial/FastLAS/tree/master/data/anbncn.asg).
+We can run the ASG solver on this input file using the command:
+
+```
+ASG --mode=run --depth=4 aibjck.asg
+```
+
+If the ASG solver is correctly installed, it should output
+the following set of strings:
+
+```
+
+abc
+aabbcc
+```
+
+
 ## Learn Mode
 
 TODO
