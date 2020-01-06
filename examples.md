@@ -219,9 +219,9 @@ the `a^nb^nc^n` ASG.
 
 The final component of a learning task is a hypothesis space. This is
 defined using mode declarations, which are similar to those used by the
-[ILASP](www.ilasp.com) system -- we refer the reader to the ILASP manual
-for introductory information on mode declarations. There are two key
-differences:
+[ILASP](http://www.ilasp.com) system -- we refer the reader to the ILASP
+manual for introductory information on mode declarations. There are two
+key differences:
 
 1. The scope of a mode declaration can be given in a list following the
    mode declaration. This expresses which production rules can contain
