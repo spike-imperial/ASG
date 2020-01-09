@@ -5,7 +5,7 @@ We recommend that you copy it to somewhere in your PATH (for example,
 
 The ASG solver has the following dependencies:
 
-1. [Clingo 5.3.0](https://github.com/potassco/clingo/releases). ILASP
+1. [Clingo 5.4.0](https://github.com/potassco/clingo/releases). ILASP
    users should note that unlike ILASP, which only requires the Clingo
    executable, the ASG solver requires the Clingo library `libclingo`.
    We therefore recommend that you follow the installation instructions
